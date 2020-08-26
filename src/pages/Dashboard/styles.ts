@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
-import signInBackground from '../../assets/sign-in-background.png';
 
 export const Container = styled.div``;
 
@@ -75,6 +74,7 @@ export const Schedule = styled.div`
     display: flex;
     align-items: center;
     font-weight: 500;
+    text-transform: capitalize;
 
     span {
       display: flex;
@@ -156,6 +156,10 @@ export const Section = styled.section`
     padding-bottom: 16px;
     margin-bottom: 16px;
   }
+
+  > p {
+    color: #999591;
+  }
 `;
 
 export const Appointment = styled.div`
@@ -163,7 +167,7 @@ export const Appointment = styled.div`
   align-items: center;
 
   & + div {
-    marign-top: 16px;
+    margin-top: 16px;
   }
 
   span {
@@ -171,6 +175,7 @@ export const Appointment = styled.div`
     display: flex;
     align-items: center;
     color: #f4ede8;
+    width: 70px;
 
     svg {
       color: #ff9000;
