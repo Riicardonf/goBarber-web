@@ -6,8 +6,9 @@ import { format, isToday, isAfter } from 'date-fns';
 
 import { ptBR } from 'date-fns/esm/locale';
 
-import { FiPower, FiClock } from 'react-icons/fi';
+import { FiPower, FiClock, FiMeh } from 'react-icons/fi';
 import { parseISO } from 'date-fns/esm';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Header,
@@ -152,7 +153,9 @@ const Dashboard: React.FC = () => {
 
             <div>
               <span>Bem-vindo,</span>
-              <strong>{user.name}</strong>
+              <Link to="/profile">
+                <strong>{user.name}</strong>
+              </Link>
             </div>
           </Profile>
           <button type="button" onClick={signOut}>
@@ -187,7 +190,7 @@ const Dashboard: React.FC = () => {
             <strong>Manhã</strong>
 
             {morningAppointments.length === 0 && (
-              <p>Nenhum Agendamento neste período :(</p>
+              <p>Nenhum Agendamento neste período</p>
             )}
 
             {morningAppointments.map((appointment) => (
@@ -211,7 +214,7 @@ const Dashboard: React.FC = () => {
             <strong>Tarde</strong>
 
             {afternoonAppointments.length === 0 && (
-              <p>Nenhum Agendamento neste período :(</p>
+              <p>Nenhum Agendamento neste período </p>
             )}
 
             {afternoonAppointments.map((appointment) => (
